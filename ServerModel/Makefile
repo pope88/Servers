@@ -31,6 +31,7 @@ ifndef RESCOMP
 endif
 
 ifeq ($(config),debugdll)
+
   OBJDIR     = ../obj/DebugDLL/ServerModel
   TARGETDIR  = .
   TARGET     = $(TARGETDIR)/libServerModel.so
@@ -56,6 +57,7 @@ ifeq ($(config),debugdll)
 endif
 
 ifeq ($(config),releasedll)
+
   OBJDIR     = ../obj/ReleaseDLL/ServerModel
   TARGETDIR  = .
   TARGET     = $(TARGETDIR)/libServerModel.so
@@ -156,6 +158,7 @@ endif
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
 endif
 
+
 $(OBJDIR)/Mplayer.o: Model/Mplayer.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
@@ -163,6 +166,7 @@ $(OBJDIR)/Mtable.o: Model/Mtable.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
 $(OBJDIR)/UserSession.o: LogicModel/UserSession.cpp
+
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
 $(OBJDIR)/GameTable.o: LogicModel/GameTable.cpp
@@ -171,6 +175,7 @@ $(OBJDIR)/GameTable.o: LogicModel/GameTable.cpp
 $(OBJDIR)/Chat.o: LogicModel/Chat.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+
 $(OBJDIR)/RoomManager.o: LogicModel/RoomManager.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
@@ -181,6 +186,7 @@ $(OBJDIR)/GameRoom.o: LogicModel/GameRoom.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
 $(OBJDIR)/GameTimer.o: System/GameTimer.cpp
+
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
 $(OBJDIR)/Config.o: ../Config.cpp

@@ -5,6 +5,7 @@
 
 
 class UserSession;
+
 class GameTable: public Mtable
 {
 public:
@@ -21,7 +22,11 @@ public:
 public:
 	virtual void onTimer() {}
 	virtual void onGameStart() {}
+<<<<<<< HEAD
 	virtual void onEndGame() {}
+=======
+	virtual void onGameEnd() {}
+>>>>>>> origin/master
 	virtual void onUserForceLeave(Mplayer *p) {}
 	virtual void onUserDisconnection(Mplayer *p) {}
 	virtual void onUserverReconnection(Mplayer *p) {}
@@ -36,10 +41,13 @@ public:
 	virtual void removeTimer() {}
 	virtual void ChangePlayerMoney(Mplayer *p, int nMoney) {}
 	virtual void setBaseSore(int nBaseCore) {}
+<<<<<<< HEAD
 private:
 	std::vector<UserSession*>  _vecPlayers;   //players
 	UInt8 _maxPlayNum;
 	UInt8 _curPlayNum;
 	UInt32 _tableId;
+=======
+>>>>>>> origin/master
 };
 #endif

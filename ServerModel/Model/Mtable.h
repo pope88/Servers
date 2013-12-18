@@ -9,6 +9,7 @@ public:
 public:
 	virtual void onTimer() = 0;
 	virtual void onGameStart() = 0;
+
 	virtual void onEndGame() = 0;
 	virtual void onUserForceLeave(Mplayer *p) = 0;
 	virtual void onUserDisconnection(Mplayer *p) = 0;

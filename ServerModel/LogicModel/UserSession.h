@@ -3,7 +3,9 @@
 #include "../Model/Mplayer.h"
 #include "../Model/MSession.h"
 #include "GameTable.h"
+
 class GameRoom;
+
 class UserSession :public MSession, public Mplayer
 {
 public:
@@ -55,6 +57,7 @@ public:
 	//db
 
 	//base control
+<<<<<<< HEAD
 	const int getPid() { return 0; }
 	void setTableInfo(GameTable pTable, int chiarid) {}
 	inline int getStatus() { return 0; }
@@ -81,5 +84,27 @@ private:
 	UInt32 _sessionId;
 	UInt32 _gatewayId;
 	UInt32 _remoteAddr;
+=======
+	const int getPid() {}
+	void setTableInfo(GameTable pTable, int chiarid) {}
+	inline int getStatus() {}
+	void setStaus(int status) {}
+	inline int getRoomId() {}
+
+	int changeMoney(int money) {}
+	inline int getLimitScore() {}
+
+	//logic 
+	bool onStartGame() {}
+	TableManager* getTableManager() {}
+	void onHeartBit() {}
+	void getNetDelay() {}
+	const std::string& getPlayerIp() {}
+	const GameTable* getTheTable() {}
+	void setPlayerStatus(UInt16 status) {}
+
+private:
+	GameTable *m_pTable;
+>>>>>>> origin/master
 };
 #endif
