@@ -1,0 +1,27 @@
+option optimize_for = LITE_RUNTIME;
+option cc_generic_services = false;
+
+package game.net.data.CtoLS;
+
+// 0xFFFF
+// 登出信息
+message CLSUserLogout_0xFFFF {
+}
+
+// 0xFFF0
+// 网关连接
+message CLSGatewayConnect_0xFFF0
+{
+  required uint32 sessionId = 1;
+}
+
+// 0xE000
+// 后台操作
+message CLSBackendCommand_0xE000
+{
+  // 玩家列表，如果以*开始则表示为玩家名，否则为玩家ID
+  repeated string players = 1;
+  // 指令列表
+  repeated string commands = 2;
+}
+
