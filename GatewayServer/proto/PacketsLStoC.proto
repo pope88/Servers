@@ -1,0 +1,62 @@
+package game.net.data.LStoC;
+// 0xFFF1
+message LSCCUserDataChangeUp_0xFFF1 {
+  //发生变化后的等级
+  required uint32 level = 1;
+  //以前的等级
+  required uint32 oldLevel=2;
+}
+
+// 0xFFF2
+// 背包物品发生变化
+// 消耗品→装备→元神→灵珠→强化→天材地宝
+// 1,2,4,8,16,32
+message LSCCPackChange_0xFFF2 {
+	required uint32 topType = 1;
+}
+
+// 0xFFF3
+// 装备将领
+message LSCCHeroEqChange_0xFFF3 {
+	required uint32 uuid = 1;
+}
+
+
+// 0xFFF4
+// 将领团队改变
+// uuid heroId
+// type 0 add  1 remove 2 change 
+message LSCCTeamChange_0xFFF4 {
+	required uint32 uuid = 1;
+	required uint32 type = 2;
+}
+
+// 0xFFF5
+message LSCCHeroPanelOpen_0xFFF5 {
+	required bool status = 1;
+}
+
+// 0xFFF6
+message LSCCHeroLevelUp_0xFFF6 {
+	required uint32 heroId = 1;
+	required uint32 level = 2;
+	required uint32 oldLevel = 3;
+}
+
+// 0xFFF7
+message LSCCVIPLevelChange_0xFFF7 {
+	required uint32 level = 1;
+	required uint32 oldLevel = 2;
+}
+
+// 0xFFF8
+// Ctrl + 物品
+message LSCSendItemToChat_0xFFF8 {
+	required uint32 id = 1;
+	required string name = 2;
+	required uint32 color = 3;
+}
+
+//0xFFF9
+message LSCCSendDemonToMassage_0xFFF9{
+}

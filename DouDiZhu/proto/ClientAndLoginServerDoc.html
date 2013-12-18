@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Document</title>
+</head>
+<body>
+<font size='2'>
+<a href='#0xE000C'>(C->S) [0xE000] SBackendCommand</a><br />
+<a href='#0xFFF0C'>(C->S) [0xFFF0] SGatewayConnect</a><br />
+<a href='#0xFFF1L'>(S->C) [0xFFF1] CCUserDataChangeUp</a><br />
+<a href='#0xFFF2L'>(S->C) [0xFFF2] CCPackChange</a><br />
+<a href='#0xFFF3L'>(S->C) [0xFFF3] CCHeroEqChange</a><br />
+<a href='#0xFFF4L'>(S->C) [0xFFF4] CCTeamChange</a><br />
+<a href='#0xFFF5L'>(S->C) [0xFFF5] CCHeroPanelOpen</a><br />
+<a href='#0xFFF6L'>(S->C) [0xFFF6] CCHeroLevelUp</a><br />
+<a href='#0xFFF7L'>(S->C) [0xFFF7] CCVIPLevelChange</a><br />
+<a href='#0xFFF8L'>(S->C) [0xFFF8] CSendItemToChat</a><br />
+<a href='#0xFFF9L'>(S->C) [0xFFF9] CCSendDemonToMassage</a><br />
+<a href='#0xFFFFC'>(C->S) [0xFFFF] SUserLogout</a><br />
+<br /><table width='800' border='0' cellspacing='1' cellpadding='5' bgcolor='#404040'>
+  <tr><td width='100%' bgcolor='#9BCFC6' colspan='2'><a class='anchor' id='0xE000C'></a><font size='3'><b>(C->S) [0xE000] SBackendCommand</b></font></td></tr>
+  <tr><td bgcolor='#FFFFFF' colspan='2'>0xE000<br />鍚庡彴鎿嶄綔
+  </td></tr>
+  <tr><td width='30' bgcolor='#EBEFF6' rowspan='2' align='center'><b>1</b></td><td width='770' bgcolor='#EBEFF6'><b>[repeated] <a href='#string'>string</a> players</b></td></tr>
+  <tr><td bgcolor='#FFFFFF'>鐜╁鍒楄〃锛屽鏋滀互*寮�濮嬪垯琛ㄧず涓虹帺瀹跺悕锛屽惁鍒欎负鐜╁ID
+  </td></tr>  <tr><td width='30' bgcolor='#EBEFF6' rowspan='2' align='center'><b>2</b></td><td width='770' bgcolor='#EBEFF6'><b>[repeated] <a href='#string'>string</a> commands</b></td></tr>
+  <tr><td bgcolor='#FFFFFF'>鎸囦护鍒楄〃
+  </td></tr></table>
+<br />
+<table width='800' border='0' cellspacing='1' cellpadding='5' bgcolor='#404040'>
+  <tr><td width='100%' bgcolor='#9BCFC6' colspan='2'><a class='anchor' id='0xFFF0C'></a><font size='3'><b>(C->S) [0xFFF0] SGatewayConnect</b></font></td></tr>
+  <tr><td bgcolor='#FFFFFF' colspan='2'>0xFFF0<br />缃戝叧杩炴帴
+  </td></tr>
+  <tr><td width='30' bgcolor='#EBEFF6' align='center'><b>1</b></td><td width='770' bgcolor='#EBEFF6'><b>[required] <a href='#uint32'>uint32</a> sessionId</b></td></tr>
+</table>
+<br />
+<table width='800' border='0' cellspacing='1' cellpadding='5' bgcolor='#404040'>
+  <tr><td width='100%' bgcolor='#9BCFC6' colspan='2'><a class='anchor' id='0xFFF1L'></a><font size='3'><b>(S->C) [0xFFF1] CCUserDataChangeUp</b></font></td></tr>
+  <tr><td bgcolor='#FFFFFF' colspan='2'>0xFFF1
+  </td></tr>
+  <tr><td width='30' bgcolor='#EBEFF6' rowspan='2' align='center'><b>1</b></td><td width='770' bgcolor='#EBEFF6'><b>[required] <a href='#uint32'>uint32</a> level</b></td></tr>
+  <tr><td bgcolor='#FFFFFF'>发生变化后的等级
+  </td></tr>  <tr><td width='30' bgcolor='#EBEFF6' rowspan='2' align='center'><b>2</b></td><td width='770' bgcolor='#EBEFF6'><b>[required] <a href='#uint32'>uint32</a> oldLevel</b></td></tr>
+  <tr><td bgcolor='#FFFFFF'>以前的等级
+  </td></tr></table>
+<br />
+<table width='800' border='0' cellspacing='1' cellpadding='5' bgcolor='#404040'>
+  <tr><td width='100%' bgcolor='#9BCFC6' colspan='2'><a class='anchor' id='0xFFF2L'></a><font size='3'><b>(S->C) [0xFFF2] CCPackChange</b></font></td></tr>
+  <tr><td bgcolor='#FFFFFF' colspan='2'>0xFFF2<br />背包物品发生变化<br />消耗品→装备→元神→灵珠→强化→天材地宝<br />1,2,4,8,16,32
+  </td></tr>
+  <tr><td width='30' bgcolor='#EBEFF6' align='center'><b>1</b></td><td width='770' bgcolor='#EBEFF6'><b>[required] <a href='#uint32'>uint32</a> topType</b></td></tr>
+</table>
+<br />
+<table width='800' border='0' cellspacing='1' cellpadding='5' bgcolor='#404040'>
+  <tr><td width='100%' bgcolor='#9BCFC6' colspan='2'><a class='anchor' id='0xFFF3L'></a><font size='3'><b>(S->C) [0xFFF3] CCHeroEqChange</b></font></td></tr>
+  <tr><td bgcolor='#FFFFFF' colspan='2'>0xFFF3<br />装备将领
+  </td></tr>
+  <tr><td width='30' bgcolor='#EBEFF6' align='center'><b>1</b></td><td width='770' bgcolor='#EBEFF6'><b>[required] <a href='#uint32'>uint32</a> uuid</b></td></tr>
+</table>
+<br />
+<table width='800' border='0' cellspacing='1' cellpadding='5' bgcolor='#404040'>
+  <tr><td width='100%' bgcolor='#9BCFC6' colspan='2'><a class='anchor' id='0xFFF4L'></a><font size='3'><b>(S->C) [0xFFF4] CCTeamChange</b></font></td></tr>
+  <tr><td bgcolor='#FFFFFF' colspan='2'>0xFFF4<br />将领团队改变<br />uuid heroId<br />type 0 add  1 remove 2 change
+  </td></tr>
+  <tr><td width='30' bgcolor='#EBEFF6' align='center'><b>1</b></td><td width='770' bgcolor='#EBEFF6'><b>[required] <a href='#uint32'>uint32</a> uuid</b></td></tr>
+  <tr><td width='30' bgcolor='#EBEFF6' align='center'><b>2</b></td><td width='770' bgcolor='#EBEFF6'><b>[required] <a href='#uint32'>uint32</a> type</b></td></tr>
+</table>
+<br />
+<table width='800' border='0' cellspacing='1' cellpadding='5' bgcolor='#404040'>
+  <tr><td width='100%' bgcolor='#9BCFC6' colspan='2'><a class='anchor' id='0xFFF5L'></a><font size='3'><b>(S->C) [0xFFF5] CCHeroPanelOpen</b></font></td></tr>
+  <tr><td bgcolor='#FFFFFF' colspan='2'>0xFFF5
+  </td></tr>
+  <tr><td width='30' bgcolor='#EBEFF6' align='center'><b>1</b></td><td width='770' bgcolor='#EBEFF6'><b>[required] <a href='#bool'>bool</a> status</b></td></tr>
+</table>
+<br />
+<table width='800' border='0' cellspacing='1' cellpadding='5' bgcolor='#404040'>
+  <tr><td width='100%' bgcolor='#9BCFC6' colspan='2'><a class='anchor' id='0xFFF6L'></a><font size='3'><b>(S->C) [0xFFF6] CCHeroLevelUp</b></font></td></tr>
+  <tr><td bgcolor='#FFFFFF' colspan='2'>0xFFF6
+  </td></tr>
+  <tr><td width='30' bgcolor='#EBEFF6' align='center'><b>1</b></td><td width='770' bgcolor='#EBEFF6'><b>[required] <a href='#uint32'>uint32</a> heroId</b></td></tr>
+  <tr><td width='30' bgcolor='#EBEFF6' align='center'><b>2</b></td><td width='770' bgcolor='#EBEFF6'><b>[required] <a href='#uint32'>uint32</a> level</b></td></tr>
+  <tr><td width='30' bgcolor='#EBEFF6' align='center'><b>3</b></td><td width='770' bgcolor='#EBEFF6'><b>[required] <a href='#uint32'>uint32</a> oldLevel</b></td></tr>
+</table>
+<br />
+<table width='800' border='0' cellspacing='1' cellpadding='5' bgcolor='#404040'>
+  <tr><td width='100%' bgcolor='#9BCFC6' colspan='2'><a class='anchor' id='0xFFF7L'></a><font size='3'><b>(S->C) [0xFFF7] CCVIPLevelChange</b></font></td></tr>
+  <tr><td bgcolor='#FFFFFF' colspan='2'>0xFFF7
+  </td></tr>
+  <tr><td width='30' bgcolor='#EBEFF6' align='center'><b>1</b></td><td width='770' bgcolor='#EBEFF6'><b>[required] <a href='#uint32'>uint32</a> level</b></td></tr>
+  <tr><td width='30' bgcolor='#EBEFF6' align='center'><b>2</b></td><td width='770' bgcolor='#EBEFF6'><b>[required] <a href='#uint32'>uint32</a> oldLevel</b></td></tr>
+</table>
+<br />
+<table width='800' border='0' cellspacing='1' cellpadding='5' bgcolor='#404040'>
+  <tr><td width='100%' bgcolor='#9BCFC6' colspan='2'><a class='anchor' id='0xFFF8L'></a><font size='3'><b>(S->C) [0xFFF8] CSendItemToChat</b></font></td></tr>
+  <tr><td bgcolor='#FFFFFF' colspan='2'>0xFFF8<br />Ctrl + 物品
+  </td></tr>
+  <tr><td width='30' bgcolor='#EBEFF6' align='center'><b>1</b></td><td width='770' bgcolor='#EBEFF6'><b>[required] <a href='#uint32'>uint32</a> id</b></td></tr>
+  <tr><td width='30' bgcolor='#EBEFF6' align='center'><b>2</b></td><td width='770' bgcolor='#EBEFF6'><b>[required] <a href='#string'>string</a> name</b></td></tr>
+  <tr><td width='30' bgcolor='#EBEFF6' align='center'><b>3</b></td><td width='770' bgcolor='#EBEFF6'><b>[required] <a href='#uint32'>uint32</a> color</b></td></tr>
+</table>
+<br />
+<table width='800' border='0' cellspacing='1' cellpadding='5' bgcolor='#404040'>
+  <tr><td width='100%' bgcolor='#9BCFC6' colspan='2'><a class='anchor' id='0xFFF9L'></a><font size='3'><b>(S->C) [0xFFF9] CCSendDemonToMassage</b></font></td></tr>
+  <tr><td bgcolor='#FFFFFF' colspan='2'>0xFFF9
+  </td></tr>
+</table>
+<br />
+<table width='800' border='0' cellspacing='1' cellpadding='5' bgcolor='#404040'>
+  <tr><td width='100%' bgcolor='#9BCFC6' colspan='2'><a class='anchor' id='0xFFFFC'></a><font size='3'><b>(C->S) [0xFFFF] SUserLogout</b></font></td></tr>
+  <tr><td bgcolor='#FFFFFF' colspan='2'>0xFFFF<br />鐧诲嚭淇℃伅
+  </td></tr>
+</table>
+<br />
+</font>
+</body>
